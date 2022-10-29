@@ -1,0 +1,251 @@
+.fiverr-carousel {
+  position: relative;
+
+  .carousel__content {
+    position: absolute;
+    color: $color-white-0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    margin: 0 auto;
+
+    .text-car {
+      width: $mw-1;
+    }
+
+    .head-car {
+      h1 {
+        @include styleText($color-white-0, $fs-3, $fw-3);
+        line-height: $line-height-2;
+        padding-bottom: $pd-3;
+      }
+      i {
+        font-weight: $fw-1;
+      }
+    }
+
+    .search-bar {
+      @extend %search;
+    }
+    button {
+      @extend %buttonSearch;
+    }
+  }
+  .popular {
+    display: flex;
+    @include styleText($color-white-0, $fs-0, $fw-2);
+    line-height: $line-height-1 + 3;
+    padding-top: $pd-3;
+    ul {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      margin-left: $mg-0 + 2;
+      padding-left: 0;
+    }
+    li {
+      margin-right: $mg-0 + 2;
+      display: flex;
+    }
+    a {
+      text-decoration: none;
+      color: $color-white-0;
+      line-height: $line-height-1;
+      padding: 1px $pd-0 + 2 0;
+      border: 1px solid $color-white-0;
+      border-radius: $bd-rd-2;
+      transition: all 0.5s;
+      &:hover {
+        color: $color-gray-2;
+        background-color: $color-white-0;
+      }
+    }
+  }
+
+  .carousel__img {
+    .carousel-caption {
+      position: absolute;
+      color: $color-white-0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      bottom: 0;
+      right: 0;
+      transform: translate(35%, -10%);
+    }
+
+    .star {
+      &::before {
+        background: url("../img/five_stars.e5c37f5.svg") no-repeat;
+        background-size: $bg-sz-1;
+        content: "";
+        display: block;
+        height: 17px;
+
+        bottom: 0;
+        right: 0;
+        transform: translate(42%, -50%);
+      }
+    }
+  }
+
+  @include responsive("ex-large"){
+    .carousel__content{
+      .head-car{
+        h1{
+          font-size: $fs-3 - 5;
+        }
+      }
+      .search-bar{
+        form{
+          width: 90%;
+        }
+      }
+    }
+  }
+  @include responsive("large"){
+    .carousel__content{
+      .head-car{
+        h1{
+          font-size: $fs-2 + 4;
+          width:90%;
+          padding-bottom: $pd-1;
+        }
+      }
+      .search-bar{
+        form{
+          width: 80%;
+        }
+        input{
+          height: $h-4 + 6;
+        }
+        span{
+          top: $t-0 - 2;
+        }
+      }
+      button{
+        height: $h-4 + 6;
+        padding: $pd-0 $pd-3;
+      }
+    }
+    .carousel__img{
+      .carousel-caption{
+        font-size: $fs-0;
+      }
+    }
+    .popular{
+      width: 80%;
+      ul{
+        margin-left: 0;
+      }
+      li{
+        margin-right: $mg-0 - 2;
+      }
+      a{
+        padding: 1px 6px 0;
+      }
+    }
+  }
+  @include responsive("sc-1"){
+    .carousel__img{
+      .carousel-caption{
+        p{
+
+          display:none;
+        }
+      }
+    }
+  }
+  @include responsive("medium"){
+    .carousel__content{
+      .head-car{
+        h1{
+          font-size: $fs-4 + 4;
+          width:75%;
+          padding-bottom: $pd-1;
+          margin-bottom: 0;
+          line-height: $line-height-3;
+        }
+      }
+      .search-bar{
+        form{
+          width: 70%;
+        }
+        input{
+          height: $h-4 + 6;
+        }
+        span{
+          top: $t-0 - 2;
+        }
+      }
+      button{
+        height: $h-4 + 6;
+        padding: $pd-0 - 5 $pd-3 - 4;
+      }
+    }
+    .popular{
+      width: 80%;
+      p{
+        display: none;
+      }
+      ul{
+        margin-left: 0;
+      }
+      li{
+        margin-right: $mg-0 - 2;
+      }
+      a{
+        padding: 0 3px 0;
+      }
+    }
+  }
+  @include responsive("small"){
+    .carousel__content{
+      .head-car{
+        h1{
+          font-size: $fs-4 - 1;
+          width:75%;
+          padding-bottom: $pd-1;
+          margin-bottom: 0;
+          line-height: $line-height-4;
+        }
+      }
+      .search-bar{
+        form{
+          width: 65%;
+        }
+        input{
+          height: $h-4 - 1;
+        }
+        span{
+          top: $t-2;
+        }
+      }
+      button{
+        height: $h-4 - 1;
+        padding: $pd-0 - 5 $pd-1 - 2;
+      }
+    }
+    .popular{
+      width: 80%;
+      font-size: $fs-0 - 2;
+      p{
+        display: none;
+      }
+      ul{
+        margin-left: 0;
+      }
+      li{
+        margin-right: $mg-0 - 5;
+      }
+      a{
+        padding: 0 3px 0;
+      }
+    }
+  }
+}

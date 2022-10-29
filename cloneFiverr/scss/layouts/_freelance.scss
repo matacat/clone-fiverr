@@ -1,0 +1,122 @@
+.freelance {
+  margin-bottom: $mg-4;
+  background-color: $color-white-3;
+
+  &__item {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: $pd-8;
+    padding-bottom: $pd-8;
+  }
+
+  &__content {
+    h2 {
+      @include styleText($color-gray-2, $fs-2, $fw-3);
+      padding-bottom: $pd-3;
+      line-height: 120%;
+    }
+
+    .text--head {
+      @extend %displayFlexCenter;
+      justify-content: start;
+      i {
+        width: $w-0 + 4;
+        height: $h-0 + 4;
+        color: $color-gray-1;
+        margin-right: $mg-0;
+        font-size: $fs-4;
+        margin-bottom: $mg-0;
+      }
+      h4 {
+        @include styleText($color-gray-2, $fs-1 + 2, $fw-3);
+        line-height: 140%;
+      }
+    }
+    .text--description {
+      p {
+        font-size: $fs-1 + 2;
+        line-height: $line-height-1 + 2;
+        color: $color-gray-0;
+      }
+    }
+  }
+
+  &__video {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    i {
+      color: white;
+      font-size: 30px;
+      width: 80px;
+      height: 80px;
+      background-color: $color-gray-6;
+      line-height: 80px;
+      text-align: center;
+      border-radius: 50%;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include responsive("medium"){
+    &__item{
+      padding-top: $pd-6;
+      padding-bottom: $pd-6;
+    }
+    &__content{
+      h2{
+        font-size: $fs-2 - 4;
+        padding-bottom: $pd-1;
+      }
+      .text--head{
+        i{
+          font-size: $fs-1;
+          height: $h-0 - 4;
+          margin-right: 0;
+        }
+      }
+      .text--description{
+        p{
+          font-size: $fs-1;
+        }
+      }
+    }
+  }
+  @include responsive("small"){
+    &__item{
+      padding-top: $pd-4;
+      padding-bottom: $pd-4;
+    }
+    &__content{
+      h2{
+        font-size: $fs-4;
+        padding-bottom: 0;
+      }
+      .text--head{
+        i{
+          font-size: $fs-1;
+          height: $h-0 - 4;
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+        h4{
+          margin-bottom: 0;
+        }
+      }
+      .text--description{
+        p{
+          font-size: $fs-1;
+          margin-bottom: 0;
+          line-height: $line-height-1 - 2;
+        }
+      }
+    }
+  }
+}

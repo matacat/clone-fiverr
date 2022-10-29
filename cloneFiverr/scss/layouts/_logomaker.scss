@@ -1,0 +1,113 @@
+.logomaker {
+  background-color: $color-blue-2;
+  background-blend-mode: overlay;
+  padding: 0 $pd-4;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+
+  height: $h-7;
+  position: relative;
+
+  &__content {
+    color: $color-white-0;
+    position: absolute;
+    text-align: left;
+    top: 25%;
+    left: 15%;
+    transform: translate(-25%, -20%);
+
+    h4{
+      @include styleText($color-white-0, $fs-4, $fw-0);
+      span{
+        &:first-of-type{
+          font-weight: $fw-3;
+        }
+        &:last-of-type{
+          font-size: $fs-0 - 3;
+          font-weight: $fw-4;
+        }
+      }
+    }
+    h3{
+      @include styleText($color-white-0, $fs-2 + 2, $fw-3);
+      margin-bottom: $mg-1 / 2;
+
+      p{
+        @extend %textItalic;
+        font-size: $fs-2 + 2;
+      }
+    }
+
+    p{
+      line-height: $line-height-1;
+      margin-bottom: $mg-2;
+    }
+
+    button{
+      @include styleText($color-blue-2, $fs-1, $fw-2);
+      padding: $pd-0 $pd-3;
+      border: none;
+      background-color: $color-white-0;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -50%);
+    img {
+      object-fit: cover;
+      
+      overflow: hidden;
+      transform: scale(1.7);
+    }
+  }
+
+  @include responsive("sc-0"){
+    &__item{
+      .logomaker__content{
+        h4{
+          font-size: $fs-4 - 2;
+        }
+        h3{
+          font-size: $fs-2 - 2;
+          p{
+            font-size: $fs-2 - 2 ;
+          }
+        }
+        button{
+          font-size: $fs-0;
+        }
+      }
+    }
+  }
+  @include responsive("sc-1"){
+    &__item{
+      .logomaker__content{
+        h4{
+          font-size: $fs-4 - 4;
+        }
+        h3{
+          font-size: $fs-2 - 4;
+          p{
+            font-size: $fs-2 - 4 ;
+          }
+        }
+        button{
+          font-size: $fs-0 - 2;
+        }
+      }
+    }
+  }
+
+  @include responsive("medium"){
+    &__img {
+      display: none;
+    }
+  }
+}

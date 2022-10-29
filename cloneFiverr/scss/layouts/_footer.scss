@@ -1,0 +1,130 @@
+footer {
+  padding: $pd-6 $pd-4 $pd-3;
+  .footer__top {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      display: block;
+      background-color: $color-white-1;
+      margin: 0 $mg-1;
+    }
+
+    .footer__item {
+      padding: 0 $pd-1;
+    }
+
+    h6 {
+      @include styleText($color-gray-2, $fs-1, $fw-4);
+      padding-bottom: $pd-2;
+    }
+
+    ul {
+      padding-left: 0;
+      li {
+        list-style-type: none;
+        padding-bottom: $pd-2;
+      }
+
+      p {
+        @include styleText($color-gray-1, $fs-1, $fw-0);
+      }
+      .sub-text {
+        @include styleText($color-gray-4, $fs-0, $fw-0);
+        padding-top: 0;
+      }
+    }
+  }
+
+  .footer__bot {
+    display: flex;
+    font-size: $fs-1;
+    line-height: $line-height-1;
+    justify-content: space-between;
+    .bot--left {
+      padding-top: $pd-1;
+      @extend %displayFlexCenter;
+      justify-content: flex-start;
+      h2 {
+        @include styleText($color-gray-0, $fs-2, $fw-2);
+        margin: 0;
+      }
+
+      p {
+        @include styleText($color-gray-1, $fs-0, $fw-0);
+        margin: 0 0 0 $mg-2;
+      }
+    }
+
+    .bot--right {
+      padding-top: $pd-1;
+      @extend %displayFlexCenter;
+      @include styleText($color-gray-1, $fs-0, $fw-2);
+      justify-content: flex-end;
+
+      .social {
+        padding-right: $pd-4;
+        i {
+          font-size: $fs-1 + 4;
+          padding: 0 $pd-1;
+          width: $w-0;
+          height: $h-0;
+        }
+      }
+
+      a {
+        @include styleText($color-gray-1, $fs-1, $fw-2);
+        text-decoration: none;
+        padding: 0 $pd-0;
+      }
+
+      .access {
+        padding-left: $pd-0;
+        font-size: $fs-2;
+      }
+    }
+  }
+
+  @include responsive("ex-large") {
+    .footer__bot {
+      .bot--right {
+        .social {
+          padding-right: $pd-0;
+        }
+        a {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  @include responsive("large") {
+    .footer__bot {
+      .bot--right {
+        justify-content: flex-start;
+      }
+    }
+    
+  }
+  @include responsive("sc-1") {
+    .footer__bot {
+      .bot--right {
+        .social {
+          i {
+            padding: 0 $pd-0;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive("small") {
+    .footer__top {
+      .footer__item {
+        .ul {
+          display: none;
+        }
+      }
+    }
+  }
+}

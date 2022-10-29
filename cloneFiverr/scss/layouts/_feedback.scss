@@ -1,0 +1,68 @@
+.feedback{
+  width: 95%;
+  margin: auto;
+  border:none;
+  margin-bottom: $mg-4;
+  
+  .card{
+    border: none;
+  }
+  .img-left{
+    width: $w-2;
+    height: $h-3;
+    object-fit: cover;
+    border-radius: $bd-rd-0;
+  }
+
+  .card-body{
+    height: $h-3;
+    padding: $pd-1 $pd-5 + 8 0 $pd-6;
+    h5{
+      @include styleText($color-gray-1, $fs-1 + 4, $fw-1);
+      line-height: $line-height-1 + 4;
+      // border-right: 1px solid #c5c6c9;
+      // height: 36px;
+      // margin-left: 16px;
+      .kay{
+        width: $w-6;
+      }
+      .bri{
+        width: $w-7;
+      }
+      .cai{
+        width: $w-8;
+      }
+      .tim{
+        width: $w-9;
+      }
+    }
+    img{
+      display: inline-block;
+      height: $h-4;
+      object-fit: cover;
+    }
+
+    p{
+      @extend %textItalic;
+      color: $color-black-1;
+      font-size: $fs-2 - 2;
+      line-height: $line-height-3;
+    }
+  }
+
+  @include responsive("sc-0"){
+    .card-body{
+      p{
+        font-size: $fs-4 + 1;
+      }
+    }
+  }
+  @include responsive("large"){
+    .card-body{
+      p{
+        font-size: $fs-4 - 2;
+        line-height: $line-height-3 - 4;
+      }
+    }
+  }
+}

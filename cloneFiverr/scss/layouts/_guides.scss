@@ -1,0 +1,62 @@
+.guides {
+  padding: $pd-4 $pd-4 $pd-6;
+  &__content {
+    @extend %displayFlexCenter;
+    padding-bottom: $pd-3;
+    h2 {
+      @include styleText($color-gray-2, $fs-2, $fw-3);
+    }
+    a {
+      @include styleText($color-blue-2, $fs-1, $fw-2);
+      text-decoration: none;
+      padding-top: $pd-0;
+    }
+  }
+  &__item {
+    a {
+      text-decoration: none;
+    }
+    .card {
+      border: none;
+      padding: 0 $pd-1 / 4;
+      line-height: 24px;
+
+      &--img{
+        transition: all 1s;
+        &:hover{
+          img{
+            opacity: .85;
+          }
+        }
+      }
+
+      &-body {
+        padding: $pd-1 0;
+        h5 {
+          @include styleText($color-gray-2, $fs-1 + 2, $fw-3);
+        }
+        p {
+          @include styleText($color-gray-1, $fs-1, $fw-1);
+        }
+      }
+    }
+  }
+
+  @include responsive("medium"){
+    &__content{
+      h2{
+        font-size: $fs-4 + 4;
+      }
+      a{
+        display: none;
+      }
+    }
+  }
+  @include responsive("small"){
+    &__content{
+      h2{
+        font-size: $fs-4;
+      }
+    }
+  }
+}

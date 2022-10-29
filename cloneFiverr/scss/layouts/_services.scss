@@ -1,0 +1,30 @@
+.services{
+  margin-bottom: $mg-6;
+
+  &__content{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  &__head{
+    h2{
+      padding-bottom: $pd-3;
+      font-weight: $fw-3;
+    }
+  }
+
+  &__item{
+    .card{
+      border: none;
+    }
+    p{
+      @include styleText($color-white-0, $fs-0, $fw-2);
+      line-height: $line-height-1 - 4;
+      margin-bottom: 0;
+    }
+    h3{
+      @include styleText($color-white-0,$fs-4,$fw-2);
+    }
+  }
+
+}

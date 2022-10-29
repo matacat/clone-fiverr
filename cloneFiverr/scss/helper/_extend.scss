@@ -1,0 +1,60 @@
+%textItalic {
+  color: white;
+  font-size: 48px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+%displayFlexCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+%badgeNew {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #584aff;
+}
+
+%search {
+  form {
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+  span {
+    position: absolute;
+    color: #62646a;
+    width: 16px;
+    height: 16px;
+    top: 16px;
+    left: 16px;
+  }
+  input {
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    height: 48px;
+    padding-left: 44px;
+    padding-top: 8px;
+    font: inherit;
+    &:hover {
+      border: 1px solid #c5c6c9;
+      resize: none;
+    }
+  }
+}
+
+%buttonSearch {
+  border-radius: 0 4px 4px 0;
+  height: 48px;
+  padding: 12px 24px;
+  font-weight: 700;
+  background-color: #1dbf73;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #19a463;
+  }
+}
